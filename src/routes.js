@@ -8,4 +8,8 @@ routes.post('/schema',collectionExist,mongoController.newSchema);
 
 routes.post('/create',mongoController.store);
 
+routes.get('/lister',mongoController.lister);
+
+routes.post('/creates',mongoController.creates);
+
 module.exports = routes;

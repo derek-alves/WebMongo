@@ -26,6 +26,17 @@ class mongoController{
           res.status(400).send("Erro ao cadastrar");
       });
     }
+
+    lister(req, res){
+      const collections = Object.keys(mongoose.connection.collections)
+      res.send(collections)
+    }
+
+    creates(req ,res){
+      const {user_name,dados} = req.body;
+     // console.log(mongoose.connection.find(user_name))
+      res.send("")
+    }
 }
 
 
