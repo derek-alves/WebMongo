@@ -22,7 +22,7 @@ app.post('/schema',(req,res)=>{
   
   mongoose.connection.db.listCollections().toArray(function (err, names) {
     const result = names.find(item => item.name == user_name);
-    console.log(result);
+    console.log("result",result);
 });
   const UserSchema = new  mongoose.Schema(schema);
   mongoose.model(user_name,UserSchema);
@@ -37,7 +37,7 @@ console.log(schemaa);
  new schemaa(dados).save().then(()=>{
      res.status(201).send("Efetuado com sucesso");
  }).catch((err)=>{
-    res.status(400).send("Erro ao cadastrar:",err);
+    res.status(400).send("Erro ao cadastrar");
  });
  
 });
@@ -64,7 +64,7 @@ console.log(schemaa);
 //   res.send("error ao encontrar schema");
 // }
 
-app.listen(3000);
+app.listen(3333);
 
 
 
