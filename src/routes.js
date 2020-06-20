@@ -14,5 +14,7 @@ routes.put('/update',mongoController.update);
 
 routes.get('/delete',mongoController.delete);
 
+routes.post('/append',mongoController.append);
+
 
 module.exports = routes;

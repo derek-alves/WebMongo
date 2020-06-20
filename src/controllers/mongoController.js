@@ -59,6 +59,18 @@ class mongoController{
         }
       })
     }
+
+    append(req, res){
+      const {user_name, dados} = req.body
+      const schemaa = mongoose.model(user_name)
+      const insertShemaa = new schemaa(dados)
+      insertShemaa.save().then(() => {
+        res.status(201).send("append OK")   
+      }).catch((err) => {
+        res.status(400).send("append NO: " + err)
+      })
+    }
+
 }
 
 
