@@ -1,5 +1,4 @@
 const mongoose = require('../model/database/connection');
-const bodyParser = require('body-parser');
 //var schemaa;
 
 
@@ -15,29 +14,53 @@ class mongoController{
     store(req,res){
       const {user_name,dados} = req.body;
       const schemaa = mongoose.model(user_name);
-      console.log(schemaa);
-      console.log(dados);
-
-     const data = new schemaa(dados);
-      
-      data.save().then(()=>{
-          res.status(201).send("Efetuado com sucesso");
-      }).catch((err)=>{
-          res.status(400).send("Erro ao cadastrar");
+      schemaa.create(dados,(err,result)=>{
+        if(err) return res.status(400).send(err);
+        else{
+          res.status(201).send(result);
+        }
       });
+      //conexão padrão mongodb
+        // const con = mongoose.connection.db.collection(user_name);
+      //con.insert()
+    }
+    list(req, res){
+      const {user_name} = req.query;
+      const table = mongoose.model(user_name);
+      table.find({},(err, data) =>{
+        if(err){
+          res.send(err);
+        }else{
+          res.send(data);
+        }
+    });
     }
 
-    lister(req, res){
-      const collections = Object.keys(mongoose.connection.collections)
-      res.send(collections)
+    update(req,res){
+      const {user_name,data,id} = req.body;
+      const table = mongoose.model(user_name);
+      table.findByIdAndUpdate((id),data,(err,result)=>{
+        if(err){
+          res.send(err);
+        }else{
+          res.send("Alterado com sucesso: " + result);
+        }
+      })
     }
 
-    creates(req ,res){
-      const {user_name,dados} = req.body;
-     // console.log(mongoose.connection.find(user_name))
-      res.send("")
+    delete(req,res){
+      const {user_name,id} = req.body;
+      const table = mongoose.model(user_name);
+      table.findByIdAndDelete((id),(err,result)=>{
+        if(err){
+          res.send(err);
+        }else{
+          res.send("deletado com sucesso: " + result);
+        }
+      })
     }
 }
+
 
 
 module.exports = new mongoController();
