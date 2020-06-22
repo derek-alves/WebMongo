@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+main h1 {
+    text-align: center;
+    color: #5cb85c;
+    margin-top: 50px;
+}
+
+main hr {
+    height: 1,5px;
+    background-color: #5cb85c;
+}
+
+main #texto {
+    box-sizing: border-box;
+    font-size: 20px;
+}
