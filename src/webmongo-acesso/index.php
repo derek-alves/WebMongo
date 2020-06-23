@@ -47,13 +47,22 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/escritorio.jpg" class="img-fluid d-block w-100" alt="...">
+                <div class="carousel-caption">
+                  <h2>Facilidade e desempenho</h2>
+                </div>
+                <img id="imagem1" src="img/escritorio.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/desenvolvedor.jpg" class="img-fluid d-block w-100" alt="...">
+                <div class="carousel-caption">
+                  <h2>Tecnologias modernas</h2>
+                </div>
+                <img id="imagem2" src="img/desenvolvedor.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/database.jpg" class="img-fluid d-block w-100" alt="...">
+                <div class="carousel-caption">
+                  <h2>Segurança e confiabilidade</h2>
+                </div>
+                <img id="imagem3" src="img/database.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,6 +97,8 @@
     </main>
     
     <footer>
+
+      <p>WebMongo</p>
 
 
     </footer>

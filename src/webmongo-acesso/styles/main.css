@@ -16,11 +16,16 @@ main h1 {
 }
 
 main hr {
-    height: 1,5px;
+    height: 0.5px;
     background-color: #5cb85c;
 }
 
 main #texto {
     box-sizing: border-box;
     font-size: 20px;
+}
+
+main #imagem1, #imagem2, #imagem3 {
+    background-color: black;
+    opacity: 0.5;
 }
