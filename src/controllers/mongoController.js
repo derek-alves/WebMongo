@@ -91,8 +91,17 @@ class mongoController{
       })   
     }
 
-    
+    drop(req, res){
+      const {user_name, email} = req.body
 
+      const Table = mongoose.model(user_name)
+
+      Table.findOneAndDelete({email: email}).then(() => {
+        res.status(201).send("Deletado OK")
+      }).catch((err)=>{
+        res.status(400).send("Deletado NO: " + err)
+      })
+    }
 }
 
 

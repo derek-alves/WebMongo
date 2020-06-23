@@ -18,5 +18,7 @@ routes.post('/append',mongoController.append);
 
 routes.post('/alter',mongoController.alter);
 
+routes.post('/drop',mongoController.drop);
+
 
 module.exports = routes;
