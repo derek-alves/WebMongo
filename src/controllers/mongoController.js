@@ -71,6 +71,28 @@ class mongoController{
       })
     }
 
+    alter(req, res){
+      const {user_name, dados} = req.body
+      const schemaa = mongoose.model(user_name)
+
+      schemaa.findOne({email: dados.email}).then((Schemaa)=>{
+        
+        Schemaa.nome = dados.nome
+        Schemaa.password = dados.password
+
+        Schemaa.save().then(() => {
+          res.status(201).send("Editado OK")
+        }).catch((err)=>{
+          res.status(400).send("Editado NO: " + err)
+        })
+
+      }).catch((err) => {
+        res.status(400).send("Find NO: " + err)
+      })   
+    }
+
+    
+
 }
 
 
