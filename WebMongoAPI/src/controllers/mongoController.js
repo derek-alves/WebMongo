@@ -102,6 +102,18 @@ class mongoController{
         res.status(400).send("Deletado NO: " + err)
       })
     }
+
+    
+    select(req, res){
+      const {user_name, email} = req.body
+      const Table = mongoose.model(user_name)
+
+      Table.find().then((datas) => {
+        res.send(datas)
+        // res.send(datas.map(data=> data.toJSON()))
+    })
+
+    }
 }
 
 
