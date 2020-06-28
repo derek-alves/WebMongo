@@ -39,7 +39,10 @@ foreach ($datasObject as $key => $value) {
 
 }
 
+/*
 foreach ($datas as $key => $value) {
   echo "<br>";
   var_dump($value);
 }
+*/
+

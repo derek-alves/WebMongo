@@ -1,9 +1,4 @@
-<?php
-
-//Incluindo o header:
-include_once 'includes/header.php';
-
-?>
+<?php include_once 'includes/header.php'; ?>
 
     <main>
 

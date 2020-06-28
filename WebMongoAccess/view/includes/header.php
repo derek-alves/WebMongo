@@ -28,7 +28,7 @@
               <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="Schima.php">Nova Tabela<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="Insert.php">Inserir Dados<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="select.php">Listar Tabela<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="SelectTable.php">Listar Tabela<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="uso.php">Como usar</a>
                 <a class="nav-item nav-link" href="sobre.php">Sobre</a>
               </div>
