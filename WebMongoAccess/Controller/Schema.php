@@ -1,33 +1,35 @@
 <?php
-var_dump($_POST['name']);
 
-echo "<br>";
+$type = $_POST['type'];
+$require = $_POST['require'];
+$unique = $_POST['unique'];
+$select = $_POST['select'];
 
-$schema = "{ \"user_name\": \"" . $_POST['username'] . "\",\n";
-$schema .= "\"schema\": { \n";
+$struct = array();
 
 foreach ($_POST['name'] as $key => $value) {
-    $schema .= "\"" . $_POST['name'][$key] .  "\": { \n";
-    $schema .= "\"type\": " . "\"" . $_POST['type'][$key] . "\",\n";
 
-    if ($_POST['require'][$key] == "true") {
-        $schema .= "\"require\": " . "\"true\",\n";
+    $config = array("type" => $type[$key]);
+
+    if ($require[$key] == "true") {
+        $config += array("require" => true);
     }
-    if ($_POST['unique'][$key] == "true") {
-        $schema .= "\"unique\": " . "\"true\",\n";
+    if ($unique[$key] == "true") {
+        $config += array("unique" => true);
     }
-    if ($_POST['select'][$key] == "false") {
-        $schema .= "\"select\": " . "\"false\",\n";
+    if ($select[$key] == "false") {
+        $config += array("select" => false);
     }
 
-    $schema = trim($schema, ",\n");
-
-    $schema .= "\n},";
+    $struct += array($value => $config);
 }
-$schema = trim($schema, ',');
-$schema .= "}}";
 
-echo nl2br($schema);
+$aJson = array(
+    "user_name" => $_POST["username"],
+    "schema" => $struct
+);
+
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -39,7 +41,7 @@ curl_setopt_array($curl, array(
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => $schema,
+    CURLOPT_POSTFIELDS => json_encode($aJson),
     CURLOPT_HTTPHEADER => array(
         "Content-Type: application/json"
     ),

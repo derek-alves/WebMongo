@@ -26,7 +26,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="Schima.php">Novo banco<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="Schima.php">Nova Tabela<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="Insert.php">Inserir Dados<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="select.php">Listar Tabela<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="uso.php">Como usar</a>
                 <a class="nav-item nav-link" href="sobre.php">Sobre</a>
               </div>

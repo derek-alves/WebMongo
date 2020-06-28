@@ -3,10 +3,8 @@
 $datas = array();
 
 foreach ($_POST["column"] as $key => $value) {
-    //echo $value . " => " . $_POST["data"][$key] . "</br>";
     $datas = $datas + array($value => $_POST["data"][$key]);
 }
-
 
 $aJson = array( 
     "user_name" => $_POST["username"],
