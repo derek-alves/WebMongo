@@ -4,6 +4,7 @@
 }
 
 main {
+    margin-top: 50px;
     margin-bottom: 80px;
 }
 
@@ -15,11 +16,16 @@ main h1 {
 
 main hr {
     height: 0.5px;
+    margin-left: 80px;
+    margin-right: 80px;
     background-color: #5cb85c;
+    height: 1px;
 }
 
 main #texto {
     box-sizing: border-box;
+    margin-left: 80px;
+    margin-right: 80px;
     font-size: 20px;
 }
 
@@ -27,3 +33,14 @@ main #imagem1, #imagem2, #imagem3 {
     background-color: black;
     opacity: 0.5;
 }
+
+main #imagens{
+    background-color: black;
+}
+
+footer {
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+

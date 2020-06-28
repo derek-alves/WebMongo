@@ -5,16 +5,16 @@ include_once 'includes/header.php';
 
 ?>
 
-    <main style="margin-bottom: 80px;">
+    <main>
 
         <!--Início do carousel-->
-        <div id="exampleCarouselIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner" id="imagens">
               <div class="carousel-item active">
                 <div class="carousel-caption">
                   <h2>Facilidade e desempenho</h2>
@@ -45,7 +45,7 @@ include_once 'includes/header.php';
         </div>
           <!--Fim do carousel-->
 
-          <h1>Por que escolher WebMongo?</h1>
+          <h1>Por que escolher o Moginho?</h1>
           <br/>
           <hr/>
           <br/>
@@ -53,7 +53,7 @@ include_once 'includes/header.php';
           <div id="texto">
              <p>
                 Um bom banco de dados é essencial para que as informações da sua empresa sejam 
-                 armazenadas com segurança. E WebMongo oferece o suporte necessário para que você 
+                 armazenadas com segurança. E Moginho oferece o suporte necessário para que você 
                 possa operar de forma rápida e intuitiva.
             </p>
           </div>

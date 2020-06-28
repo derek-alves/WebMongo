@@ -1,10 +1,10 @@
-<footer style="text-align: center; margin-bottom: 30px;">
+<footer>
 
       <picture>
         <source srcset="img/mongoose.png" type="image/svg+xml">
-        <img src="img/mongoose.png" class="img-fluid" alt="Logo WebMongo" width="100" height="100">
+        <img src="img/mongoose.png" class="img-fluid" alt="Logo WebMongo" width="152" height="152">
       </picture>
-      <p>2020 WebMongo, todos os direitos reservados</p>
+      <p>2020 Moginho, todos os direitos reservados</p>
 
     </footer>
 
