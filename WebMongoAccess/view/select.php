@@ -29,38 +29,22 @@
 		<table class="table" style="text-align: center;">
   			<thead style="color: #5cb85c;">
     			<tr>
-      				<th scope="col">Coluna 1 (nome)</th>
-      				<th scope="col">Coluna 2 (endereço)</th>
-      				<th scope="col">Coluna 3 (telefone)</th>
-      				<th scope="col">Coluna 3 (senha)</th>
-   				 </tr>
+      				<th id="coluna1" scope="col">Coluna 1 (nome)</th>
+      				<th id="coluna2" scope="col">Coluna 2 (endereço)</th>
+      				<th id="coluna3"scope="col">Coluna 3 (telefone)</th>
+      				<th id="coluna4" scope="col">Coluna 4 (senha)</th>
+   				</tr>
+   				<tbody>
+   	 				<tr>
+      					<td id="dado1" scope="row">exemplo</td>
+      					<td id="dado2">exemplo</td>
+      					<td id="dado3">exemplo</td>
+      					<td id="dado4">exemplo</td>
+    				</tr>
+    			</tbody>
   			</thead>
-
-  			<tbody>
-    			<tr>
-      				<th scope="row">Marcos</th>
-      				<td>Rua São Carlos</td>
-      				<td>1122334455</td>
-      				<td>senha</td>
-    			</tr>
-
-   				 <tr>
-      				<th scope="row">Paula</th>
-      				<td>Rua Abóbora</td>
-      				<td>444555666777</td>
-     				<td>Senha</td>
-    			</tr>
-
-    			<tr>
-    				<th scope="row">Alex</th>
-      				<td>Rua da rua</td>
-      				<td>999900008888</td>
-      				<td>$enha</td>
-    			</tr>
-
-  			</tbody>
 		</table>
-	<!--Fim da tabela-->
+	    <!--Fim da table-->
 
 	</main>
 
