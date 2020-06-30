@@ -1,6 +1,4 @@
 const mongoose = require('../model/database/connection');
-//var schemaa;
-
 
 class mongoController{
   
@@ -20,9 +18,7 @@ class mongoController{
           res.status(201).send(result);
         }
       });
-      //conexão padrão mongodb
-        // const con = mongoose.connection.db.collection(user_name);
-      //con.insert()
+
     }
     list(req, res){
       const {user_name} = req.query;
@@ -51,68 +47,13 @@ class mongoController{
     delete(req,res){
       const {user_name,id} = req.body;
       const table = mongoose.model(user_name);
-      table.findByIdAndDelete((id),(err,result)=>{
+      table.findOneAndDelete((id),(err,result)=>{
         if(err){
           res.send(err);
         }else{
-          res.send("deletado com sucesso: " + result);
+          res.send(result);
         }
       })
-    }
-
-    append(req, res){
-      const {user_name, dados} = req.body
-      const schemaa = mongoose.model(user_name)
-      const insertShemaa = new schemaa(dados)
-      insertShemaa.save().then(() => {
-        res.status(201).send("append OK")   
-      }).catch((err) => {
-        res.status(400).send("append NO: " + err)
-      })
-    }
-
-    alter(req, res){
-      const {user_name, dados} = req.body
-      const schemaa = mongoose.model(user_name)
-
-      schemaa.findOne({email: dados.email}).then((Schemaa)=>{
-        
-        Schemaa.nome = dados.nome
-        Schemaa.password = dados.password
-
-        Schemaa.save().then(() => {
-          res.status(201).send("Editado OK")
-        }).catch((err)=>{
-          res.status(400).send("Editado NO: " + err)
-        })
-
-      }).catch((err) => {
-        res.status(400).send("Find NO: " + err)
-      })   
-    }
-
-    drop(req, res){
-      const {user_name, email} = req.body
-
-      const Table = mongoose.model(user_name)
-
-      Table.findOneAndDelete({email: email}).then(() => {
-        res.status(201).send("Deletado OK")
-      }).catch((err)=>{
-        res.status(400).send("Deletado NO: " + err)
-      })
-    }
-
-    
-    select(req, res){
-      const {user_name, email} = req.body
-      const Table = mongoose.model(user_name)
-
-      Table.find().then((datas) => {
-        res.send(datas)
-        // res.send(datas.map(data=> data.toJSON()))
-    })
-
     }
 }
 

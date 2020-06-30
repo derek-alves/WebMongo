@@ -12,15 +12,7 @@ routes.get('/list',mongoController.list);
 
 routes.put('/update',mongoController.update);
 
-routes.get('/delete',mongoController.delete);
-
-routes.post('/append',mongoController.append);
-
-routes.post('/alter',mongoController.alter);
-
-routes.post('/drop',mongoController.drop);
-
-routes.post('/select',mongoController.select);
+routes.delete('/delete',mongoController.delete);
 
 
 module.exports = routes;
