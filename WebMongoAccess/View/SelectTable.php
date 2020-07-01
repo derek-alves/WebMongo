@@ -1,5 +1,11 @@
-<form action="Select.php" method="post">
-    <label for="">nome da tabela: </label>
+<?php
+
+include_once 'Template/header.php';
+
+?>
+
+<form action="Select.php" method="post" style="text-align: center; margin-top: 50px;">
+    <label for="">Nome da tabela: </label>
     <input name="username" type="text">
-    <button type="submit">Listar Tabela</button>
+    <button type="submit" class="btn btn-success">Listar Tabela</button>
 </form>

@@ -1,15 +1,14 @@
 <?php include_once 'Template/header.php'; ?>
+
 <br><br>
+
     <div class="container">
         
-        <form action="../Controller/Insert.php" method="POST">
-        <label for="username">Nome da Tabela</label>
-        <input class="form-control" name="username" type="text">
-        <br>
+        <form action="../Controller/Insert.php" method="POST" style="text-align: center;">
+        Username: <input name="username" type="text">
         <input type="button" class="btn btn-success" id="add" value="Novo Campo">
         <button class="btn btn-success" type="submit"> Inserir na Tabela </button>
-        <hr>
-            <table>
+            <table style="margin: auto; margin-top: 30px;">
                 <thead>
                     <tr>
                         <th scope="col">Nome do Campo</th>
@@ -18,8 +17,8 @@
                 </thead>
                 <tbody id="campos">
                     <tr>
-                        <td><input class="form-control" name="column[]" type="text"></td>
-                        <td><input class="form-control" name="data[]" type="text"></td>
+                        <td><input name="column[]" type="text"></td>
+                        <td><input name="data[]" type="text"></td>
                     </tr>
                 </tbody>
             </table>
@@ -29,7 +28,13 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script>
-        var campo = '<tr> <td><input class="form-control" name="column[]" type="text"></td> <td><input class="form-control" name="data[]" type="text"></td> </tr>';
+        var campo = ""
+        campo += '<tr>'
+        campo += '<td><input name="column[]" type="text"></td>'
+        campo += '<td><input name="data[]" type="text"></td>'
+        campo += '<tr>'
+
+
         $("#add").click(function() {
             $("#campos").append(campo);
         });
