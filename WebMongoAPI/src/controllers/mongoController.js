@@ -14,16 +14,16 @@ class mongoController{
     }
 
     store(req,res){
-      const {user_name,dados} = req.body;
-      const schemaa = mongoose.model(user_name);
-      schemaa.create(dados,(err,result)=>{
-        if(err) return res.status(400).send(err);
-        else{
-          res.status(201).send(result);
-        }
-      });
-
+      try {
+        const {user_name,dados} = req.body
+        const schemaa = mongoose.model(user_name)
+        schemaa.create(dados)
+        res.send(true)
+      } catch (error) {
+        res.send(false)
+      }
     }
+    
     list(req, res){
       const {user_name} = req.body
       const Table = mongoose.model(user_name)

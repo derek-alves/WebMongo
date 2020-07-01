@@ -3,9 +3,12 @@
     <div class="container">
         
         <form action="../Controller/Insert.php" method="POST">
-        Username: <input name="username" type="text">
+        <label for="username">Nome da Tabela</label>
+        <input class="form-control" name="username" type="text">
+        <br>
         <input type="button" class="btn btn-success" id="add" value="Novo Campo">
         <button class="btn btn-success" type="submit"> Inserir na Tabela </button>
+        <hr>
             <table>
                 <thead>
                     <tr>
@@ -15,8 +18,8 @@
                 </thead>
                 <tbody id="campos">
                     <tr>
-                        <td><input name="column[]" type="text"></td>
-                        <td><input name="data[]" type="text"></td>
+                        <td><input class="form-control" name="column[]" type="text"></td>
+                        <td><input class="form-control" name="data[]" type="text"></td>
                     </tr>
                 </tbody>
             </table>
@@ -26,13 +29,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script>
-        var campo = ""
-        campo += '<tr>'
-        campo += '<td><input name="column[]" type="text"></td>'
-        campo += '<td><input name="data[]" type="text"></td>'
-        campo += '<tr>'
-
-
+        var campo = '<tr> <td><input class="form-control" name="column[]" type="text"></td> <td><input class="form-control" name="data[]" type="text"></td> </tr>';
         $("#add").click(function() {
             $("#campos").append(campo);
         });
