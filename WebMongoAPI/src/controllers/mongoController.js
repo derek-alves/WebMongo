@@ -3,10 +3,14 @@ const mongoose = require('../model/database/connection');
 class mongoController{
   
     newSchema(req,res){
-      const {user_name,schema} = req.body;
-       const UserSchema = new mongoose.Schema(schema);
-       mongoose.model(user_name,UserSchema);
-      res.send(schema);
+      try {
+        const {user_name, schema} = req.body
+        const UserSchema = new mongoose.Schema(schema)
+        mongoose.model(user_name, UserSchema)
+        res.send(true)
+      } catch (error) {
+        res.send(false)
+      }
     }
 
     store(req,res){

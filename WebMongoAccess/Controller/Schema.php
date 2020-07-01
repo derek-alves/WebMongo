@@ -50,4 +50,16 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+
+if ($response == "true") { ?>
+        <script>
+            alert("Tabela Cadastrada");
+            window.location.href = "../View/index.php";
+        </script>
+    <?php }else { ?>
+        <script>
+            alert("Erro ao Cadastrar a Tabela\nVerifique o Nome da Tabela");
+            window.history.back();
+        </script>
+    <?php }
+
