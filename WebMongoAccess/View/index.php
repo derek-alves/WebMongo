@@ -1,4 +1,4 @@
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'Template/header.php'; ?>
 
     <main>
 
@@ -14,19 +14,19 @@
                 <div class="carousel-caption">
                   <h2>Facilidade e desempenho</h2>
                 </div>
-                <img id="imagem1" src="img/escritorio.jpg" class="img-fluid d-block w-100" alt="...">
+                <img id="imagem1" src="../Public/Images/escritorio.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <div class="carousel-caption">
                   <h2>Tecnologias modernas</h2>
                 </div>
-                <img id="imagem2" src="img/desenvolvedor.jpg" class="img-fluid d-block w-100" alt="...">
+                <img id="imagem2" src="../Public/Images/desenvolvedor.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <div class="carousel-caption">
                   <h2>Segurança e confiabilidade</h2>
                 </div>
-                <img id="imagem3" src="img/database.jpg" class="img-fluid d-block w-100" alt="...">
+                <img id="imagem3" src="../Public/Images/database.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -63,6 +63,6 @@
 <?php
 
 //Incluindo o footer:
-include_once 'includes/footer.php';
+include_once 'Template/footer.php';
 
 ?>
