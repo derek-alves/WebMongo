@@ -10,7 +10,7 @@ $aJson = array(
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost:3333/select",
+  CURLOPT_URL => "http://localhost:3333/list",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

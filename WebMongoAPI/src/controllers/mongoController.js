@@ -21,15 +21,11 @@ class mongoController{
 
     }
     list(req, res){
-      const {user_name} = req.query;
-      const table = mongoose.model(user_name);
-      table.find({},(err, data) =>{
-        if(err){
-          res.send(err);
-        }else{
-          res.send(data);
-        }
-    });
+      const {user_name} = req.body
+      const Table = mongoose.model(user_name)
+      Table.find().then((datas) => {
+        res.send(datas)
+      })
     }
 
     update(req,res){
@@ -54,6 +50,16 @@ class mongoController{
           res.send(result);
         }
       })
+    }
+
+    alter(req, res){
+      const {user_name, id, dados} = req.body
+      const Table = mongoose.model(user_name)
+      Table.findByIdAndUpdate({_id: id}, dados).then(()=>{
+          res.send(true)
+      }).catch(() => {
+        res.send(false)
+      })   
     }
 }
 

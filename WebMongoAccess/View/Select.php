@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'Template/header.php'; ?>
 <?php include_once("../Controller/Select.php"); ?>
 
 	<header>
@@ -58,6 +58,6 @@
 
 </body>
 
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once 'Template/footer.php'; ?>
 
 </html>
