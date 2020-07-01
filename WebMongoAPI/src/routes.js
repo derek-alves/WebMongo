@@ -12,7 +12,7 @@ routes.post('/list',mongoController.list);
 
 routes.put('/update',mongoController.update);
 
-routes.delete('/delete',mongoController.delete);
+routes.post('/delete',mongoController.delete);
 
 routes.post('/alter',mongoController.alter);
 

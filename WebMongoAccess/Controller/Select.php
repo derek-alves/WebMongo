@@ -34,10 +34,18 @@ $datasObject = json_decode($response);
 
 $datas = array();
 
-foreach ($datasObject as $key => $value) {
-  array_push($datas, (array) $value);
-
+if ($response == "false") { ?>
+    <script>
+      alert("Tabela Não Encontrada\nVerifique o Nome e Tente Novamente");
+      window.location.href = "index.php";
+  </script>
+<?php }else{
+  foreach ($datasObject as $key => $value) {
+    array_push($datas, (array) $value);
+  
+  }
 }
+
 
 /*
 foreach ($datas as $key => $value) {

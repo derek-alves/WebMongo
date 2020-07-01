@@ -25,11 +25,15 @@ class mongoController{
     }
     
     list(req, res){
-      const {user_name} = req.body
-      const Table = mongoose.model(user_name)
-      Table.find().then((datas) => {
-        res.send(datas)
-      })
+      try {
+        const {user_name} = req.body
+        const Table = mongoose.model(user_name)
+        Table.find().then((datas) => {
+          res.send(datas)
+        })
+      } catch (error) {
+        res.send(false)
+      }    
     }
 
     update(req,res){
@@ -45,14 +49,12 @@ class mongoController{
     }
 
     delete(req,res){
-      const {user_name,id} = req.body;
-      const table = mongoose.model(user_name);
-      table.findOneAndDelete((id),(err,result)=>{
-        if(err){
-          res.send(err);
-        }else{
-          res.send(result);
-        }
+      const {user_name, id} = req.body
+      const Table = mongoose.model(user_name)
+      Table.findOneAndDelete({"_id": id}).then(() => {
+        res.send(true)
+      }).catch(()=>{
+        res.send(false)
       })
     }
 
