@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt_br">
-
-<html>
+<html lang="en">
 
 <head>
-
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="shortcut icon" href="img/mongoose.png">
-	<link rel="stylesheet" href="styles/main.css">
-	<title>Select</title>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moginho</title>
+    <link href="../Public/Vendor/table/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
 </head>
-
-<body>
-<?php include_once 'Template/header.php'; ?>
+<?php include_once("Template/header.php"); ?>
 <?php include_once("../Controller/Select.php"); ?>
 
-	<header>
-		<h1 style="text-align: center; margin-top: 30px; margin-bottom: 50px;">Select no banco de dados (tela de listagem de dados)</h1>
-	</header>
+<div class="container">
+    <h2 class="my-4 text-center">Listagem da Tabela: <?= $user_name ?></h2>
+    <br>
+    <!-- table... -->
+    <div class="table-responsive">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <?php foreach ($datas as $key => $value) {
+                            foreach ($value as $key2 => $value2) {
+                                if ($key2 == "_id") {
+                                    echo "<th>opções</th>";
+                                } else if ($key2 != "__v") {
+                                    echo "<th> $key2 </th>";
+                                }         
+                            }
+                            break;
+                        } ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($datas as $key => $value) {
+                        echo "<tr>";
+                        foreach ($value as $key2 => $value2) {
+                            if ($key2 == "_id") { ?>
+                                <td>
+                                    <a href="../Controller/Delete.php?username=<?= $user_name ?>&id=<?= $value2 ?>">&#128395;</a>
+                                    <a href="../Controller/Delete.php?username=<?= $user_name ?>&id=<?= $value2 ?>">&#10006;</a>
+                                </td>
+                            <?php } else if ($key2 != "__v") { ?>
+                                <td><?= $value2 ?></td>
+                            <?php } }
+                        echo "</tr>";
+                    } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /table... -->
+
+</div>
+
+<script src="../Public/Vendor/table/datatables/jquery.dataTables.js"></script>
+<script src="../Public/Vendor/table/datatables/dataTables.bootstrap4.js"></script>
+<script src="../Public/Vendor/table/demo/datatables-demo.js"></script>"
 
 
-	<main>
-		<p style="font-weight: bold; margin-bottom: 40px;">Nome da tabela: <?= $user_name ?></p>
-
-		
-		<!--Início da tabela-->
-		<table class="table" style="text-align: center;">
-			<thead style="color: #5cb85c;">
-				<tr>
-					<?php foreach ($datas as $key => $value) {
-						foreach ($value as $key2 => $value2) { ?>
-							<th id="<?= $key2 ?>" scope="col"><?= $key2 ?></th>
-					<?php }
-						break;
-					} ?>
-
-				</tr>
-			<tbody>
-				<?php foreach ($datas as $key => $value) { ?>
-					<tr>
-						<?php foreach ($value as $key2 => $value2) { ?>
-							<td id="<?= $value2 ?>" scope="col"><?= $value2 ?></td>
-						<?php } ?>
-					</tr>
-				<?php } ?>
-			</tbody>
-			</thead>
-		</table>
-		<!--Fim da table-->
-
-	</main>
-
+<script src="../Public/Vendor/jquery-3.5.1.slim.min.js"></script>
+<script src="../Public/Vendor/popper.min.js"></script>
+<script src="../Public/Vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
-<?php include_once 'Template/footer.php'; ?>
 
 </html>

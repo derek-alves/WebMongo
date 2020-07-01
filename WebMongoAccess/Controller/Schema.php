@@ -61,5 +61,5 @@ if ($response == "true") { ?>
             alert("Erro ao Cadastrar a Tabela\nVerifique o Nome da Tabela");
             window.history.back();
         </script>
-    <?php }
+<?php }
 
