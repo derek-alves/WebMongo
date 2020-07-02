@@ -67,6 +67,16 @@ class mongoController{
         res.send(false)
       })   
     }
+
+    find(req, res){
+      const {user_name, find} = req.body
+      const Table = mongoose.model(user_name)
+      Table.find(find).then((data)=>{
+        data.length > 0 ? res.send(data) : res.send(false)
+      }).catch(() => {
+        res.send(false)
+      })  
+    }
 }
 
 

@@ -37,7 +37,7 @@
                         foreach ($value as $key2 => $value2) {
                             if ($key2 == "_id") { ?>
                                 <td>
-                                    <a href="../Controller/Delete.php?username=<?= $user_name ?>&id=<?= $value2 ?>">&#128395;</a>
+                                    <a href="../View/Alter.php?username=<?= $user_name ?>&id=<?= $value2 ?>">&#128395;</a>
                                     <a href="../Controller/Delete.php?username=<?= $user_name ?>&id=<?= $value2 ?>">&#10006;</a>
                                 </td>
                             <?php } else if ($key2 != "__v") { ?>

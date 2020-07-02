@@ -41,8 +41,7 @@ if ($response == "false") { ?>
   </script>
 <?php }else{
   foreach ($datasObject as $key => $value) {
-    array_push($datas, (array) $value);
-  
+    array_push($datas, (array) $value); 
   }
 }
 
