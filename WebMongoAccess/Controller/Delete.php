@@ -31,11 +31,11 @@ curl_close($curl);
 if ($response == "true") { ?>
   <script>
       alert("Item deletado com Sucesso!");
-      window.history.back();
+      window.location.href = "../View/Select.php?table=<?= $username ?>";
   </script>
 <?php }else { ?>
   <script>
       alert("Não foi Possível Deletar o Item");
-      window.history.back();
+      window.location.href = "../View/Select.php?table=<?= $username ?>";
   </script>
 <?php }

@@ -1,6 +1,6 @@
 <?php
 
-$user_name = $_POST["username"];
+$user_name = $_GET["table"];
 
 
 $aJson = array( 
@@ -34,17 +34,26 @@ $datasObject = json_decode($response);
 
 $datas = array();
 
+$dataLines = 0;
+
 if ($response == "false") { ?>
-    <script>
+  <script>
       alert("Tabela Não Encontrada\nVerifique o Nome e Tente Novamente");
       window.location.href = "index.php";
   </script>
 <?php }else{
   foreach ($datasObject as $key => $value) {
     array_push($datas, (array) $value); 
+    $dataLines++;
   }
 }
 
+if ($dataLines < 1) { ?>
+  <script>
+      alert("Ops... Nada a Ser Mostrado Nesta Tabela");
+      window.location.href = "index.php";
+  </script>
+<?php }
 
 /*
 foreach ($datas as $key => $value) {

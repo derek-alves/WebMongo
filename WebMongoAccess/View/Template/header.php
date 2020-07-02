@@ -46,9 +46,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="Select.php" method="post">
-              <label for="username">Nome da Tabela</label>
-              <input class="form-control" name="username" type="text">
+            <form action="Select.php" method="GET">
+              <label for="table">Nome da Tabela</label>
+              <input class="form-control" name="table" type="text">
               <br>
              
               <div class="modal-footer">

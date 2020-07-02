@@ -39,7 +39,7 @@ curl_close($curl);
 if ($response == "true") { ?>
   <script>
       alert("Alterado na Tabela com Sucesso!");
-      window.location.href = "../View/index.php";
+      window.location.href = "../View/Select.php?table=<?= $username ?>";
   </script>
 <?php }else { ?>
   <script>
