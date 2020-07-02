@@ -53,6 +53,12 @@
 
 </div>
 
+<?php
+
+include_once 'Template/footer2.php';
+
+?>
+
 <script src="../Public/Vendor/table/datatables/jquery.dataTables.js"></script>
 <script src="../Public/Vendor/table/datatables/dataTables.bootstrap4.js"></script>
 <script src="../Public/Vendor/table/demo/datatables-demo.js"></script>"

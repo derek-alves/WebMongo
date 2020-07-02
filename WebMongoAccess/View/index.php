@@ -3,7 +3,7 @@
     <main>
 
         <!--Início do carousel-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-left: 100px; margin-right: 100px;">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -12,19 +12,19 @@
             <div class="carousel-inner" id="imagens">
               <div class="carousel-item active">
                 <div class="carousel-caption">
-                  <h2>Facilidade e desempenho</h2>
+                  <h2 style="font-weight: bold;">Facilidade e desempenho</h2>
                 </div>
                 <img id="imagem1" src="../Public/Images/escritorio.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <div class="carousel-caption">
-                  <h2>Tecnologias modernas</h2>
+                  <h2 style="font-weight: bold;">Tecnologias modernas</h2>
                 </div>
                 <img id="imagem2" src="../Public/Images/desenvolvedor.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <div class="carousel-caption">
-                  <h2>Segurança e confiabilidade</h2>
+                  <h2 style="font-weight: bold;">Segurança e confiabilidade</h2>
                 </div>
                 <img id="imagem3" src="../Public/Images/database.jpg" class="img-fluid d-block w-100" alt="...">
               </div>
@@ -63,6 +63,6 @@
 <?php
 
 //Incluindo o footer:
-include_once 'Template/footer.php';
+include_once 'Template/footer1.php';
 
 ?>

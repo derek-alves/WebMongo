@@ -5,17 +5,12 @@
 
     <form action="../Controller/Schema.php" method="POST">
 
-
         <label for="username">Nome da Tabela:</label>
         <input class="form-control" name="username" type="text">
-
 
         <br>
         <input type="button" class="btn btn-success" id="add" value="Novo Campo">
         <button class="btn btn-success" type="submit"> Criar Schema </button>
-
-
-
 
         <hr>
         <table>
@@ -58,6 +53,12 @@
     </form>
 
 </div>
+
+<?php
+
+include_once 'Template/footer2.php';
+
+?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>
