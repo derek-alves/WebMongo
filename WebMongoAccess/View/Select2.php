@@ -58,6 +58,6 @@
 
 </body>
 
-<?php include_once 'Template/footer.php'; ?>
+<?php include_once 'Template/footer2.php'; ?>
 
 </html>
