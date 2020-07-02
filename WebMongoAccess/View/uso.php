@@ -11,11 +11,11 @@ include_once 'Template/header.php';
 	<hr/>
 	<br/>
 
-	<div id="texto">
-		<p>
-			
-		</p>
-	</div>
+	 <table style="margin-left: 10%;" cellpadding="0" cellspacing="0" width="80%" height="100%">
+        <tr>
+            <td><iframe src="../Public/Help.pdf" width="100%" height="1200" style="border: none;"></iframe></td>
+        </tr>
+    </table>
 
 	<br/>
     <hr/>
