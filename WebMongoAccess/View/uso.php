@@ -24,6 +24,6 @@ include_once 'Template/header.php';
 
 <?php
 
-include_once 'Template/footer2.php';
+include_once 'Template/footer1.php';
 
 ?>
